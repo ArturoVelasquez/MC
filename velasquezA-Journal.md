@@ -9,6 +9,8 @@ bash,
 c,
 python.
 
+A bueno ya pude alguito
+
 
 
  
