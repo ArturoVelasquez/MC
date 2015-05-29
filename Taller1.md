@@ -6,4 +6,5 @@
 
 
 ##Subseccion 2: lista sin numerar
-+[el link ha mi Github]https://github.com/ArturoVelasquez
++[el link ha mi Github](https://github.com/ArturoVelasquez)
+
