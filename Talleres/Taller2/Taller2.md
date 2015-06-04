@@ -54,4 +54,13 @@ rm lottery.csv
 
 1. Haga con [Saturno](http://nssdc.gsfc.nasa.gov/planetary/factsheet/saturniansatfact.html) lo mismo que hicimos con Júpiter: limpiar el archivo llevándolo a formato `csv` y hacer una gráfica con `gnuplot` que evalúe la tercera ley de Kepler. Hay que tener especial cuidado con la columna para el periodo de rotación.
 
+####Solución
+
+1. Se limpio la grafica en parte usando las funciones de clase en parte a mano y se guardo en el arhivo Saturno.csv
+2. Tras abrir gnuplot se definene dos funciones:
+	* cbe(x)=x**3
+	* sqr(x)=x**2
+3. Para definir el delimitador del archivo com una , se usa la funcion`set datafile separator ","`
+4. 
+
 **Al terminar la clase ejecute `lottery.sh` para saber si su taller va a ser revisado.*
