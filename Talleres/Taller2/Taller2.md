@@ -61,6 +61,6 @@ rm lottery.csv
 	* cbe(x)=x**3
 	* sqr(x)=x**2
 3. Para definir el delimitador del archivo com una , se usa la funcion`set datafile separator ","`
-4. 
+4. Por último para graficar usando las funciones se da el comando `plot "saturno.csv" using ((cbe(3):(sqr(2))`
 
 **Al terminar la clase ejecute `lottery.sh` para saber si su taller va a ser revisado.*
