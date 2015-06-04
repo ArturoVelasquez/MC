@@ -36,19 +36,19 @@ rm lottery.csv
 
 #### Solución
 
-  * Elininar los puntosm `sed -i 's/\.//g png.dat'`
+  * Elininar los puntos: `sed -i 's/\.//g png.dat'`
 
-  * Eliminar las comas segidas por agun digito `sed -i 's/\,[0-9]/\./g png.dat`.
+  * Eliminar las comas segidas por agun digito: `sed -i 's/\,[0-9]/\./g png.dat`.
 
-  * Cambiar por tab los espacion seguido por un digito `sed -i 's/\s[0-9]/\t/g' png.dat`.
+  * Cambiar por tab los espacion seguido por un digito: `sed -i 's/\s[0-9]/\t/g' png.dat`.
 
-  * Poner tab en todos los epacios vacios seguidos de ( `sed -i -E 's/\s\(/\t/g' png.dat`.
+  * Poner tab en todos los epacios vacios seguidos de ( : `sed -i -E 's/\s\(/\t/g' png.dat`.
   
-  * Eliminar los paréntesis derechos `sed -i -E 's/\(//g' png.dat
+  * Eliminar los paréntesis derechos: `sed -i -E 's/\(//g' png.dat`.
   
-  * Cambiar todos los parentesis derechos por - `sed -i -E s/\(/\-/g' png.dat > png.tsv`
+  * Cambiar todos los parentesis derechos por - : `sed -i -E s/\(/\-/g' png.dat > png.tsv`.
   
-  * para el ultimo punto `sort --field-separator=$'\t' --key=4 -n png.tsv | awk -F "\t" '{print $1}' | head -1`
+  * para el ultimo punto: `sort --field-separator=$'\t' --key=4 -n png.tsv | awk -F "\t" '{print $1}' | head -1`.
 
 ## gnuplot
 
