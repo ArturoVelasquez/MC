@@ -56,7 +56,7 @@ rm lottery.csv
 
 ####Solución
 
-1. Se limpio la grafica en parte usando las funciones de clase en parte a mano y se guardo en el arhivo Saturno.csv
+1. Se limpio la grafica en parte usando las funciones de clase en parte a mano y se guardo en el arhivo saturno.csv
 2. Tras abrir gnuplot se definene dos funciones:
 	* cbe(x)=x**3
 	* sqr(x)=x**2
