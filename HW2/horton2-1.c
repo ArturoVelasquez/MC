@@ -18,7 +18,7 @@ int main(void)
 	feet = inches/12.0 ;
 	yards = inches/36.0;
 
-/*Devuelve devuelve los valores calculados en Yardas y pies*/
+/*Devuelve los valores calculados en yardas y pies*/
 	printf("\nLa longitud en pies es %.5f", feet);
 	printf("\nLa longitud en yardas es %.5f\n", yards);
 	return 0;
