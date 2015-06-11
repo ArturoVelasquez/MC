@@ -11,7 +11,7 @@ int main(void)
 /*Pregunta el valor que debe entrar por consola*/
 	printf("Introdusca la longitud en puldgadas:");
 
-/*obtiene el valor decimal que debe dar por consola*/	
+/*Obtiene el valor para las pulgadas que se debe dar por consola*/	
 	scanf("%f",&inches);
 
 /*Calcula los valores a devolver*/
