@@ -1,3 +1,5 @@
+/*Lo mismo que horto1-1.c pero separa las lineas con \n haciendo necesaria una sola línea*/
+
 # include <stdio.h>
 
 int main(void)
