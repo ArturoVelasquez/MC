@@ -10,29 +10,29 @@ int main(void)
 	printf("\nPies de longitud:");
 	scanf("%d",&feet_length);	
 
-/*pide el valor en pulgadas de la longitud que se debe dar por consola*/
+/*Pide el valor en pulgadas de la longitud que se debe dar por consola*/
 	printf("\nPulgadas de longitud:");
 	scanf("%d",&inch_length);
 
-/*calcula el largo en yardas*/
+/*Calcula el largo en yardas*/
 	yard_length=(inch_length/36.00)+(feet_length/3.0);
 
 
-/*pide el valor en pies del ancho que se debe dar por consola*/
+/*Pide el valor en pies del ancho que se debe dar por consola*/
 	printf("\nPies de ancho:");
 	scanf("%d",&feet_width);
 
-/*pide el valor en pulgadas del ancho que se debe dar por consola*/
+/*Pide el valor en pulgadas del ancho que se debe dar por consola*/
 	printf("\nPulgadas de ancho:");
 	scanf("%d",&inch_width);
 
-/*calcula el ancho en yardas*/
+/*Calcula el ancho en yardas*/
 	yard_width=(inch_width/36.00)+(feet_width/3.0);
 
-/*clacula el area en yardas*/
+/*Calcula el área en yardas*/
 	total_area=yard_width*yard_length;
 
-/*devuelve el area en yardas*/
+/*Devuelve el área en yardas*/
 	printf("\nEl area en yardas cuadradas es: %.2f\n",total_area);
 	return 0;
 }
