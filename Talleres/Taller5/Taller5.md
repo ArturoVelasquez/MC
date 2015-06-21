@@ -9,6 +9,9 @@ Haga una copia de este archivo en su repositorio de GitHub en la carpeta /MC/Tal
 
 1. ([Fenómeno de Gibbs](https://en.wikipedia.org/wiki/Gibbs_phenomenon)) Diseñe y ejecute un experimento numérico que le permita calcular la constante de *Wilbraham-Gibbs*. En ello puede que le resulte útil una rutina de `scipy.optimize` llamada [basinhopping](http://docs.scipy.org/doc/scipy-0.15.1/reference/generated/scipy.optimize.basinhopping.html). Hágalo en un cuaderno de IPython llamdo `gibbs.ipynb`. **Debe** usar *fuerza bruta* y puede asumir que la discontinuidad se da del máximo al mínimo global de las sucesivas aproximaciones a la onda cuadrada.
 
+##Respuesta
+la onda cuadrada y el ajuste de Fourier estan [aca](http://localhost:8888/notebooks/Taller%205.ipynb)
+
 ![](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionalesLaboratorio/master/2015-V/actividades/talleres/Taller5/gibbs.png?raw=true =500x) 
 
 
