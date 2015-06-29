@@ -27,6 +27,15 @@ python.
 
 # Bash
 
+## Hands on 1
+
+### awk
+
+Este comando sirve para imprimi datos contenidos en un archivo.
+
+#### Comandos
++ `awk -f "<separador>"` - define el seprador en un archivo con columnas. 
+
 # C
 
 # Python
