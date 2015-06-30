@@ -38,11 +38,37 @@ Este comando sirve para imprimi datos contenidos en un archivo.
 + `awk {'print'}` - imprime algo buscado por awk.
 + se usa el simbolo `$` para referirse a un valor dentro de un archivo csv `Ejemplo: echo numeros importantes | awk '{print $1}'` imprmiera `numeros` para referirse a la line completa se usa `$0`
 + `%d` - sirve como en c para especificar que el valor es un decimal. (ambien se puede dar el valor hexagesimal `%x` y octagonal `%o`).
-+ 
++ awk recive coo comandos `prit` y `printf` que usan diferente sintaxis `printf` usa sintaxis de c en la que se especifica los valores de lo que se va a imprimir, y despues las constantes. Por otro lado `print` usa la variable que se imprime dentro del texto.
+
+### Curl 
+
+Este comando sirve para obener el codigo fuente de una pagina web.
+
+### sed
+
+Este comano sirve para remplazar un atron cracter o texto dentro de un texto por otra cosa
+
+#### Sintaxis
++ `sed /<patron>/d nombredelarchivo` - para eleminar un patron de un archivo.
++ `sed s/<patron que se desea cambia>/<patron por el que se desea cambiar>/g` - para remplaza un patron especifico.
++ `<numero de linea>d nombredelarchivo` - elimina una linea de un archivo.
++ `<numero de linea>i 'texto que se desea insetar' nombredelarchivo` - inserta una linea de texto en una fila de un archivo.
+
+## Hands on 2
+
+### gnuplot
+
+Es un programa que permite hacer calculos e imprimir en (o no) la terminal.
+
+### Comandos
++ `set term dumb`- permite hacer graficas en la terminal.
++ `nombreFuncion(parametro)=expresion` - gnuplot permite definir una funcion.
+gnu plot permite usar datos de un archivo tipo csv
++ `set fileseparator "separador"`
+Para poder usar un imput desde un escript de bash se debe usar el comando `EOS`
++ `gnuplot<<EOS`
 
 # C
 
 # Python
 
-
- 
