@@ -35,7 +35,7 @@ Este comando sirve para imprimi datos contenidos en un archivo.
 
 #### Comandos
 + `awk -f "<separador>"` - define el seprador en un archivo con columnas. 
-+ `awk {'print'}` - imprime algo buscado por awk.
++ `awk {'print'}` - imprime algo buscado por awk.\n
 + se usa el simbolo `$` para referirse a un valor dentro de un archivo csv `Ejemplo: echo numeros importantes | awk '{print $1}'` imprmiera `numeros` para referirse a la line completa se usa `$0`
 + `%d` - sirve como en c para especificar que el valor es un decimal. (ambien se puede dar el valor hexagesimal `%x` y octagonal `%o`).
 + awk recive coo comandos `prit` y `printf` que usan diferente sintaxis `printf` usa sintaxis de c en la que se especifica los valores de lo que se va a imprimir, y despues las constantes. Por otro lado `print` usa la variable que se imprime dentro del texto.
@@ -62,9 +62,9 @@ Es un programa que permite hacer calculos e imprimir en (o no) la terminal.
 
 ### Comandos
 + `set term dumb`- permite hacer graficas en la terminal.
-+ `nombreFuncion(parametro)=expresion` - gnuplot permite definir una funcion.
++ `nombreFuncion(parametro)=expresion` - gnuplot permite definir una funcion.\n
 gnu plot permite usar datos de un archivo tipo csv
-+ `set fileseparator "separador"`
++ `set fileseparator "separador"`.\n
 Para poder usar un imput desde un escript de bash se debe usar el comando `EOS`
 + `gnuplot<<EOS`
 
