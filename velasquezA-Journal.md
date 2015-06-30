@@ -35,6 +35,10 @@ Este comando sirve para imprimi datos contenidos en un archivo.
 
 #### Comandos
 + `awk -f "<separador>"` - define el seprador en un archivo con columnas. 
++ `awk {'print'}` - imprime algo buscado por awk.
++ se usa el simbolo `$` para referirse a un valor dentro de un archivo csv `Ejemplo: echo numeros importantes | awk '{print $1}'` imprmiera `numeros` para referirse a la line completa se usa `$0`
++ `%d` - sirve como en c para especificar que el valor es un decimal. (ambien se puede dar el valor hexagesimal `%x` y octagonal `%o`).
++ 
 
 # C
 
