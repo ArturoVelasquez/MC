@@ -62,9 +62,9 @@ Es un programa que permite hacer calculos e imprimir en (o no) la terminal.
 
 ### Comandos
 + `set term dumb`- permite hacer graficas en la terminal.
-+ `nombreFuncion(parametro)=expresion` - gnuplot permite definir una funcion.\n
++ `nombreFuncion(parametro)=expresion` - gnuplot permite definir una funcion.
 gnu plot permite usar datos de un archivo tipo csv
-+ `set fileseparator "separador"`.\n
++ `set fileseparator "separador"`.
 Para poder usar un imput desde un escript de bash se debe usar el comando `EOS`
 + `gnuplot<<EOS`
 
