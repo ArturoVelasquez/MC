@@ -230,12 +230,47 @@ for i in range(0,len(yearxix)):
     tiempoxix.append(yearxix[i]+((mesxix[i]-1)/12))
 
 from scipy.fftpack import ifft, fft, fftfreq
-# Se calcula la transformada inversa y la frecuencia de os datos 
-N=len(AF)
-dt=(AF[-1]-AF[0])/N
-DatF = fft(MediaF)
-freq = fftfreq(N, dt)
+# Se calcula la Transformada del promedio
+DFTMediaxix = np.fft.fft(mediaxix)
+
+# Se Normalizan los vectores para evitar números complejos
+absMediaxix = np.absolute(DFTMediaxix)
+
+#se calcula la transformada del tiempo y se calcla la frecencia
+frecuencia = np.fft.fftfreq(times.size,d=1/12)
+
+# se eliminan todas las frecuencias altas 
+DFTMediaxix[np.absolute(frecuencia)>=0.18]=0
+absMediaxix = np.absolute(DFTMediaxix)
+
+#se grafica de vuelta tras hacer el filtrado, volviendo de la transformada inversa
+Filtrado=np.absolute(ifft(DFTMediaxix))
+plt.plot(times,ajuste)
+plt.plot(times,media)
+
 ```
 ![](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/hands_on/figures/solaractivity.png?raw=true =500x)
 
 
+
+ # Hands-On 13
+*01-Jul-2015*
+
+## Adams-Bashforth
+
+1. Demuestre las ecuaciones utilizadas para los métodos de Adams-Bashforth de orden 2, 3 y 4 (ver Scherer eq. 11.72). Utilice  [Sympy](http://docs.sympy.org/dev/modules/integrals/integrals.html) como ayuda en los cálculos simbólicos. **log**
+ `Esto se encuentra en la tarea 6`
+
+2. Diseñe e implemente un experimento numérico para estudiar el comportamiento del error en función del timestep `h` para el método de Adams-Bashforth de tercer orden.
+
+## odeint
+
+1. Resuelva con **odeint** la ecuación diferencial del [oscilador amortiguado](https://en.wikipedia.org/wiki/Harmonic_oscillator#Damped_harmonic_oscillator) tomando ω₀=1 y analizando los casos de subamortiguamiento ( ζ<1 ), amortiguamiento crítico ( ζ=1 ) y sobreamortiguamiento ( 1<ζ ) .
+
+  ![](https://upload.wikimedia.org/math/1/0/a/10a12769f0ef501e525dafcce2e4d973.png? raw=true =350x)
+
+## Otros
+
+1. Dedique media hora en pensar en su proyecto final. **log**
+
+2. Avance en la tarea de esta semana.
