@@ -85,26 +85,31 @@ Para poder usar un imput desde un escript de bash se debe usar el comando `EOS`
 `^....`
 5. Tome el texto del artículo de la Wikipedia (haciendo *copy-paste* desde el explorador) sobre [eventos de la edad moderna](http://en.wikipedia.org/wiki/Timeline_of_modern_history) y usando expresiones regulares adecuadas transfórmelo para que tenga un formato `tsv` con dos columnas: el año y los eventos correspondientes. 
 6. Descargue con `curl` el código fuente de la página [Pi - 10 Million Digits](http://pi.karmona.com), límpielo de todo caracter diferente a los dígitos de pi y divídalo en líneas con 20 dígitos cada una quedando ellas en un archivo con nombre `PIslices20.dat`. **log**
-```#!/bin/bash
-    echo -n "El nombre del archivo csv: "
-    read archivo
-    echo -n "Escriba el numero de la columna vertical: "
-    read ejey
-    echo -n "Escriba el numero de la columna horizontal: "
-    read ejex```
+```
+#!/bin/bash
+echo -n "El nombre del archivo csv: "
+read archivo
+echo -n "Escriba el numero de la columna vertical: "
+read ejey
+echo -n "Escriba el numero de la columna horizontal: "
+read ejex
+```
+
 7. Decida si su número de teléfono celular se encuentra en los primeros 10 millones de dígitos de pi *usando PIslices20.dat*. Use [pcregrep](http://stackoverflow.com/questions/2686147/how-to-find-patterns-across-multiple-lines-using-grep) para considerar aciertos que se extienden en dos líneas.
 
 ### gnuplot
 
 1. Escriba un script de `bash` que reciba tres argumentos, el nombre de un archivo csv, el número de la columna para el eje horizontal y el número de la columna para el eje verticual y que haga con `gnuplot` una gráfica de dispersión con puntos visibles y unidos por líneas rectas. Haga pruebas con el archivo [joviansatellites.csv](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/examples/joviansatellites.csv)] **log**
-```#!/bin/bash
-    gnuplot<<EOF
-    set term dumb
-    set datafile separator ","
-    set xrange [1:350]
-    set yrange [0:780]
-    plot "joviansatellites.csv" using 2:3 with linesp
-    EOF```
+```
+#!/bin/bash
+gnuplot<<EOF
+set term dumb
+set datafile separator ","
+set xrange [1:350]
+set yrange [0:780]
+plot "joviansatellites.csv" using 2:3 with linesp
+EOF
+```
 2. Haga una gráfica en la terminal de la [lemniscata de Bernoulli](http://en.wikipedia.org/wiki/Lemniscate_of_Bernoulli) donde solamente se muestre la curva, es decir, sin títulos ni ejes. Use la representación paramétrica.
 
 ##Hands-on 5
@@ -117,24 +122,26 @@ Para poder usar un imput desde un escript de bash se debe usar el comando `EOS`
 1. La misma animación `glow` que hizo en `bash` y `gnuplot` ahora hágala usando `matplotlib`.
 2. Haga un panel de 5X5 con diferentes [curvas de Lissajous](http://en.wikipedia.org/wiki/Lissajous_curve). **log**
 
-```%pylab inline
+```
+%pylab inline
     
-    # Se generan los rangs en que varian las variables
-    r1 = np.linspace(0,25,1)
-    r2 = np.linspace(1,26,1)
-    # Se genera el valor para el desfaceentre los ejes 
-    delta = pi/2
-    # Se genera el arreglo a que servira como parametro
-    t = linspace(0, 2*pi, 400)
-    3 se generan las figuras 
-    figure (figsize = (10,10))
-    for i in range(0,25):
-        x = sin(r1[i]*t + delta)
+# Se generan los rangs en que varian las variables
+r1 = np.linspace(0,25,1)
+r2 = np.linspace(1,26,1)
+# Se genera el valor para el desfaceentre los ejes 
+delta = pi/2
+# Se genera el arreglo a que servira como parametro
+t = linspace(0, 2*pi, 400)
+# se generan las figuras 
+figure (figsize = (10,10))
+for i in range(0,25):
+	x = sin(r1[i]*t + delta)
         y = sin(r2[i]*t)
         subplot(5, 5, i+1)
         plot (x,y)
         plt.axis('off')
-    show()```
+show()
+```
 
 ![](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/hands_on/figures/lisa.png)
 
@@ -166,24 +173,23 @@ Para poder usar un imput desde un escript de bash se debe usar el comando `EOS`
 	|3.7|7982|
 	|4.3|5822|
 
-```%pylab inline
-    #se crean dos arrays con los datos
-    xr = np.array([2.3,2.8,3.2,3.7,4.3])
-    B = np.array([34745,19689,12594,7982,5822])
+```
+%pylab inline
+#se crean dos arrays con los datos
+xr = np.array([2.3,2.8,3.2,3.7,4.3])
+B = np.array([34745,19689,12594,7982,5822])
     
-    def Campo_magnetico(l,s):
-        return (l/s**3)
+def Campo_magnetico(l,s):
+    return (l/s**3)
     
-    fitpars,covmat = curve_fit(Campo_magnetico,xr,B)
-    xrdatos = np.linspace(2.3,4.3,100)
-    Bdatos = Campo_magnetico(xr100,fitpars)
+fitpars,covmat = curve_fit(Campo_magnetico,xr,B)
+xrdatos = np.linspace(2.3,4.3,100)
+Bdatos = Campo_magnetico(xr100,fitpars)
     
-    print "|     x/cm     |     B/uT     |\n|--------------|--------------|"
-        for i in range (len(Bdatos)):
-            print "|   %f   | %f |"%(xr100[i],B100[i])
-    
-    
-    ```
+print "|     x/cm     |     B/uT     |\n|--------------|--------------|"
+    for i in range (len(Bdatos)):
+        print "|   %f   | %f |"%(xr100[i],B100[i])
+```
 4. Dedique diez minutos a pensar en ideas para su proyecto final. **log**
 
 
@@ -197,3 +203,74 @@ Masa de Júpiter = 1.898E27 kg-->
 <!--![](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/hands_on/figures/choreography.png =700x)-->
 
 
+## Hands-On 10
+*23-Jun-2015*
+
+### DFT
+
+1. Estime la duración del [ciclo solar](https://en.wikipedia.org/wiki/Solar_cycle) analizando con una DFT los datos [monthrg.dat](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionalesDatos/master/hands_on/solar/monthrg.dat). La descripción del archivo está [aquí](https://github.com/ComputoCienciasUniandes/MetodosComputacionalesDatos/blob/master/hands_on/solar/README). Además utilice un filtro de altas frecuencias para obtener una gráfica similar a la mostrada abajo. **log**
+```
+%pylab inline
+# se importan los datos
+actividad=np.genfromtxt("./monthrg.dat")
+year=actividad[:,0]
+mes=actividad[:,1]
+media=actividad[:,3]
+dev=actividad[:,4]
+
+#se toman los dats desde el siglo 20
+yearxix=year[year>=1900]
+mediaxix=media[year>=1900]
+mesxix=mes[year>=1900]
+devxix=dev[year>=1900]
+
+#se calculan los datos por años y fraccion
+tiempoxix=[]
+for i in range(0,len(yearxix)):
+    tiempoxix.append(yearxix[i]+((mesxix[i]-1)/12))
+
+from scipy.fftpack import ifft, fft, fftfreq
+# Se calcula la Transformada del promedio
+DFTMediaxix = np.fft.fft(mediaxix)
+
+# Se Normalizan los vectores para evitar números complejos
+absMediaxix = np.absolute(DFTMediaxix)
+
+#se calcula la transformada del tiempo y se calcla la frecencia
+frecuencia = np.fft.fftfreq(times.size,d=1/12)
+
+# se eliminan todas las frecuencias altas 
+DFTMediaxix[np.absolute(frecuencia)>=0.18]=0
+absMediaxix = np.absolute(DFTMediaxix)
+
+#se grafica de vuelta tras hacer el filtrado, volviendo de la transformada inversa
+Filtrado=np.absolute(ifft(DFTMediaxix))
+plt.plot(times,ajuste)
+plt.plot(times,media)
+
+```
+![](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/hands_on/figures/solaractivity.png?raw=true =500x)
+
+
+
+ # Hands-On 13
+*01-Jul-2015*
+
+## Adams-Bashforth
+
+1. Demuestre las ecuaciones utilizadas para los métodos de Adams-Bashforth de orden 2, 3 y 4 (ver Scherer eq. 11.72). Utilice  [Sympy](http://docs.sympy.org/dev/modules/integrals/integrals.html) como ayuda en los cálculos simbólicos. **log**
+ `Esto se encuentra en la tarea 6`
+
+2. Diseñe e implemente un experimento numérico para estudiar el comportamiento del error en función del timestep `h` para el método de Adams-Bashforth de tercer orden.
+
+## odeint
+
+1. Resuelva con **odeint** la ecuación diferencial del [oscilador amortiguado](https://en.wikipedia.org/wiki/Harmonic_oscillator#Damped_harmonic_oscillator) tomando ω₀=1 y analizando los casos de subamortiguamiento ( ζ<1 ), amortiguamiento crítico ( ζ=1 ) y sobreamortiguamiento ( 1<ζ ) .
+
+  ![](https://upload.wikimedia.org/math/1/0/a/10a12769f0ef501e525dafcce2e4d973.png? raw=true =350x)
+
+## Otros
+
+1. Dedique media hora en pensar en su proyecto final. **log**
+
+2. Avance en la tarea de esta semana.
