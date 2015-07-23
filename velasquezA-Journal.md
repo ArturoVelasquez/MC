@@ -203,3 +203,39 @@ Masa de Júpiter = 1.898E27 kg-->
 <!--![](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/hands_on/figures/choreography.png =700x)-->
 
 
+## Hands-On 10
+*23-Jun-2015*
+
+### DFT
+
+1. Estime la duración del [ciclo solar](https://en.wikipedia.org/wiki/Solar_cycle) analizando con una DFT los datos [monthrg.dat](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionalesDatos/master/hands_on/solar/monthrg.dat). La descripción del archivo está [aquí](https://github.com/ComputoCienciasUniandes/MetodosComputacionalesDatos/blob/master/hands_on/solar/README). Además utilice un filtro de altas frecuencias para obtener una gráfica similar a la mostrada abajo. **log**
+```
+%pylab inline
+# se importan los datos
+actividad=np.genfromtxt("./monthrg.dat")
+year=actividad[:,0]
+mes=actividad[:,1]
+media=actividad[:,3]
+dev=actividad[:,4]
+
+#se toman los dats desde el siglo 20
+yearxix=year[year>=1900]
+mediaxix=media[year>=1900]
+mesxix=mes[year>=1900]
+devxix=dev[year>=1900]
+
+#se calculan los datos por años y fraccion
+tiempoxix=[]
+for i in range(0,len(yearxix)):
+    tiempoxix.append(yearxix[i]+((mesxix[i]-1)/12))
+
+from scipy.fftpack import ifft, fft, fftfreq
+# Se calcula la transformada inversa y la frecuencia de os datos 
+N=len(AF)
+dt=(AF[-1]-AF[0])/N
+DatF = fft(MediaF)
+freq = fftfreq(N, dt)
+```
+![](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/hands_on/figures/solaractivity.png?raw=true =500x)
+
+
